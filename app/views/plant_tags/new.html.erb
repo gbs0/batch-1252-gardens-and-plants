@@ -1,0 +1,8 @@
+<div class="container">
+  <h3>Add new Tag for <%= @plant.name %></h3>
+  <%= simple_form_for [@plant, @plant_tag] do |f| %>
+    <%= f.input :tag, collection: Tag.all, input_html: {multiple: true, data: {controller: "select"}} %>
+    <%# = f.input :plant, collection: Plant.where(id: params[:plant_id]), include_blank: false %>
+    <%= f.submit "Submit", disable_with: 'Submiting...' %>
+  <% end %>
+</div>
